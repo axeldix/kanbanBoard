@@ -8,15 +8,11 @@ const Form = ({ handleSubmit, handleChange }) => {
       <label>Name</label>
       <input type="text" name="name" onChange={handleChange}></input>
       <label>Description</label>
-      <input
-        type="text"
-        name="descriptions"
-        onChange={handleChange}
-      ></input>
+      <input type="text" name="descriptions" onChange={handleChange}></input>
       <label>Estimate</label>
       <input type="text" name="estimate" onChange={handleChange}></input>
       <br />
-      <input type="submit" value="Submit"></input>
+      <input type="submit" value="Submit" className="btn btn-primary"></input>
     </FormContainer>
   );
 };
