@@ -84,7 +84,6 @@ const TableStyled = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   background: #fffb91;
-  /* opacity: 0.5; */
 `;
 
 const TaskContainer = styled.li`
