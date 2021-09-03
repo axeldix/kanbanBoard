@@ -3,22 +3,40 @@ import Task from "./Task";
 
 describe("Task functionality", () => {
   test("render the state of the task In Progress", () => {
-    const state = "In Progress";
-    render(<Task state={state} />);
+    const state = {
+      name: "practice aikido",
+      state: "In Progress",
+      id: 1,
+      description: "make something",
+      estimate: 2,
+    };
+    render(<Task task={state} />);
     const taskElement = screen.getByText(/In Progress/i);
     expect(taskElement).toBeInTheDocument();
   });
 
   test("render the state of the task Completed", () => {
-    const state = "Completed";
-    render(<Task state={state} />);
+    const state = {
+      name: "practice aikido",
+      state: "Completed",
+      id: 1,
+      description: "make something",
+      estimate: 2,
+    };
+    render(<Task task={state} />);
     const taskElement = screen.getByText(/Completed/i);
     expect(taskElement).toBeInTheDocument();
   });
 
   test("render the state of the task Planned", () => {
-    const state = "Planned";
-    render(<Task state={state} />);
+    const state = {
+      name: "practice aikido",
+      state: "Planned",
+      id: 1,
+      description: "make something",
+      estimate: 2,
+    };
+    render(<Task task={state} />);
     const taskElement = screen.getByText(/Planned/i);
     expect(taskElement).toBeInTheDocument();
   });
@@ -30,9 +48,15 @@ describe("Task functionality", () => {
   });
 
   test("render a button to delete the task", () => {
-    const state = "Planned";
-    const { getByText } = render(<Task state={state} />);
-    const button = getByText(/Delete/i);
+    const state = {
+      name: "practice aikido",
+      state: "Planned",
+      id: 1,
+      description: "make something",
+      estimate: 2,
+    };
+    render(<Task task={state} />);
+    const button = screen.queryByAltText(/delete icon/i);
     expect(button).toBeInTheDocument();
   });
 });
