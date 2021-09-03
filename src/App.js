@@ -68,6 +68,11 @@ function App() {
   };
 
   const handleSubmitTask = (event) => {
+    if (!form.name || !form.description || !form.estimate ) {
+      alert('Sorry but you must complete all form fields')
+      event.preventDefault();
+      return
+    }
     const newTask = { ...form };
     setTaskList([...taskList, newTask]);
     resetForm();

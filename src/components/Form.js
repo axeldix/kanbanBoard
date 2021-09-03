@@ -28,9 +28,13 @@ export default Form
 */
 
 const FormContainer = styled.form`
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  background: #bfe6d4;
   display: flex;
   flex-direction: column;
   width: 50%;
   align-items: center;
+  justify-content: center;
   margin: auto;
+  padding: 22px;
 `;
