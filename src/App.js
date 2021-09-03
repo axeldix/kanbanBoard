@@ -11,28 +11,28 @@ function App() {
       name: "practice aikido",
       state: STATES.COMPLETED,
       id: 1,
-      description: "make something",
+      descriptions: "make something",
       estimate: 2,
     },
     {
       name: "Code trading bot",
       state: STATES.PLANNED,
       id: 2,
-      description: "make something",
+      descriptions: "make something",
       estimate: 2,
     },
     {
       name: "listen Music",
       state: STATES.IN_PROGRESS,
       id: 0,
-      description: "make something",
+      descriptions: "make something",
       estimate: 2,
     },
   ]);
 
   const INITIAL_STATE = {
     name: "",
-    description: "",
+    descriptions: "",
     estimate: "",
     id: taskList.length + 1,
     state: STATES.PLANNED,
@@ -68,7 +68,7 @@ function App() {
   };
 
   const handleSubmitTask = (event) => {
-    if (!form.name || !form.description || !form.estimate ) {
+    if (!form.name || !form.descriptions || !form.estimate ) {
       alert('Sorry but you must complete all form fields')
       event.preventDefault();
       return
@@ -89,7 +89,7 @@ function App() {
     <Container>
       <Header>
         Tasks Tracker <br />
-        <button onClick={handleAddTask}>Add Task</button>
+        <button onClick={handleAddTask} data-test-id="addTaskButton" >Add Task</button>
       </Header>
       <br />
       <Modal

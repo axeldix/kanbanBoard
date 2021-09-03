@@ -6,10 +6,10 @@ import { STATES } from './../constants'
 
 const Task = ({ task, onDelete, moveTask }) => {
   return (
-    <TaskContainer>
+    <TaskContainer data-test-id="task">
       <h2>Name: {task.name}</h2>
       <Details>State: {task.state}</Details>
-      <Details>Description: {task.description}</Details>
+      <Details>Description: {task.descriptions}</Details>
       <Details>Estimate: {task.estimate}</Details>
 
       <button onClick={() => onDelete(task.id)} title="Delete Task">
@@ -36,7 +36,7 @@ Task.defaultProps = {
     name: "Code trading bot",
     state: STATES.PLANNED,
     id: 2,
-    description: "make something",
+    descriptions: "make something",
     estimate: 2,
   },
 };
@@ -46,7 +46,7 @@ Task.propTypes = {
     name: Proptypes.string,
     state: Proptypes.string,
     id: Proptypes.number,
-    description: Proptypes.string,
+    descriptions: Proptypes.string,
     estimate: Proptypes.number,
   }),
 };

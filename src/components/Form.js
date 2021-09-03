@@ -10,7 +10,7 @@ const Form = ({ handleSubmit, handleChange }) => {
       <label>Description</label>
       <input
         type="text"
-        name="description"
+        name="descriptions"
         onChange={handleChange}
       ></input>
       <label>Estimate</label>

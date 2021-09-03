@@ -7,7 +7,7 @@ describe("Task functionality", () => {
       name: "practice aikido",
       state: "In Progress",
       id: 1,
-      description: "make something",
+      descriptions: "make something",
       estimate: 2,
     };
     render(<Task task={state} />);
@@ -20,7 +20,7 @@ describe("Task functionality", () => {
       name: "practice aikido",
       state: "Completed",
       id: 1,
-      description: "make something",
+      descriptions: "make something",
       estimate: 2,
     };
     render(<Task task={state} />);
@@ -33,7 +33,7 @@ describe("Task functionality", () => {
       name: "practice aikido",
       state: "Planned",
       id: 1,
-      description: "make something",
+      descriptions: "make something",
       estimate: 2,
     };
     render(<Task task={state} />);
@@ -52,7 +52,7 @@ describe("Task functionality", () => {
       name: "practice aikido",
       state: "Planned",
       id: 1,
-      description: "make something",
+      descriptions: "make something",
       estimate: 2,
     };
     render(<Task task={state} />);
