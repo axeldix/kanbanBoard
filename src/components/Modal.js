@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import styled from "styled-components";
 
-const ModalExample = ({ open, onClose, handleSubmit, handleChange }) => {
+const ModalAddTask = ({ open, onClose, handleSubmit, handleChange }) => {
   return (
       <Modal isOpen={open} toggle={onClose}>
         <ModalHeader toggle={onClose}>Add a new Task!</ModalHeader>
@@ -50,20 +49,4 @@ const ModalExample = ({ open, onClose, handleSubmit, handleChange }) => {
   );
 };
 
-export default ModalExample;
-
-/*
- * Styles
- */
-
-const FormContainer = styled.form`
-  font-family: "IBM Plex Sans Arabic", sans-serif;
-  /* background: #bfe6d4; */
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  padding: 22px;
-`;
+export default ModalAddTask;

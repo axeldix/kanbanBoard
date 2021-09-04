@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { Modal } from "@material-ui/core";
-import Form from "./components/Form";
 import Table from "./components/Table";
 import { STATES } from "./constants";
 import styled from "styled-components";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ModalExample from "./components/Modal";
+import ModalAddTask from "./components/Modal";
 
 function App() {
   const [taskList, setTaskList] = useState([
@@ -103,21 +101,7 @@ function App() {
       </Header>
       <br />
 
-      {/* <Modal
-        open={modal}
-        onClose={toggle}
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-        >
-        <Form
-        handleSubmit={handleSubmitTask}
-        handleChange={handleInputChange}
-        open={modal}
-        onClose={toggle}
-        />
-      </Modal> */}
-
-      <ModalExample
+      <ModalAddTask
         open={modal}
         onClose={toggle}
         handleSubmit={handleSubmitTask}
