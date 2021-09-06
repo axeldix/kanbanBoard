@@ -1,9 +1,23 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 import Task from "./Task";
-import {STATES} from './../constants'
+import { STATES } from "./../constants";
 
-const Table = ({ handleDelete, handleMove, list}) => {
+const Table = ({ handleDelete, handleMove, list }) => {
+  const TaskList = ({state}) => {
+    const listFiltered = list?.filter((task) => task.state === STATES[state]);
+    return listFiltered?.map((task) => (
+      <TaskContainer key={task.id}>
+        <Task
+          task={task}
+          key={task.id}
+          onDelete={handleDelete}
+          moveTask={handleMove}
+        />
+      </TaskContainer>
+    ));
+  };
+
   return (
     <TableStyled>
       <Header>
@@ -18,56 +32,17 @@ const Table = ({ handleDelete, handleMove, list}) => {
 
       <span>
         <ul>
-          {list?.map((task) => (
-            <>
-              {task.state === STATES.PLANNED && (
-                <TaskContainer key={task.id}>
-                  <Task
-                    task={task}
-                    key={task.id}
-                    onDelete={handleDelete}
-                    moveTask={handleMove}
-                  />
-                </TaskContainer>
-              )}
-            </>
-          ))}
+          <TaskList state={"PLANNED"}/>
+        </ul>
+      </span>
+      <span>
+        <ul>         
+          <TaskList state={"IN_PROGRESS"}/>
         </ul>
       </span>
       <span>
         <ul>
-          {list?.map((task) => (
-            <>
-              {task.state === STATES.IN_PROGRESS && (
-                <TaskContainer key={task.id}>
-                  <Task
-                    task={task}
-                    key={task.id}
-                    onDelete={handleDelete}
-                    moveTask={handleMove}
-                  />
-                </TaskContainer>
-              )}
-            </>
-          ))}
-        </ul>
-      </span>
-      <span>
-        <ul>
-          {list?.map((task) => (
-            <>
-              {task.state === STATES.COMPLETED && (
-                <TaskContainer key={task.id}>
-                  <Task
-                    key={task.id}
-                    task={task}
-                    onDelete={handleDelete}
-                    moveTask={handleMove}
-                  />
-                </TaskContainer>
-              )}
-            </>
-          ))}
+          <TaskList state={"COMPLETED"}/>
         </ul>
       </span>
     </TableStyled>
@@ -77,8 +52,8 @@ const Table = ({ handleDelete, handleMove, list}) => {
 export default Table;
 
 /*
-* Styles
-*/
+ * Styles
+ */
 
 const TableStyled = styled.div`
   display: grid;
